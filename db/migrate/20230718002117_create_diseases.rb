@@ -4,8 +4,7 @@ class CreateDiseases < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :category
       t.text :comment
-      t.datetime :starts_at
-      t.datetime :ends_at
+      t.date :started_at
       t.references :pet, null: false, foreign_key: true
 
       t.timestamps
