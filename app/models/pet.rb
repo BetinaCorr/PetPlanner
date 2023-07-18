@@ -6,4 +6,6 @@ class Pet < ApplicationRecord
   has_many :vaccines, dependent: :destroy
   has_many :allergies, dependent: :destroy
   has_many :diseases, dependent: :destroy
+
+  validates :name, :species, :age, presence: true
 end
