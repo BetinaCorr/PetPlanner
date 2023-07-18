@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_18_000705) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_07_18_001138) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -100,10 +101,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_000705) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
+  create_table "vaccines", force: :cascade do |t|
+    t.string "name"
+    t.string "purpose_vaccine"
+    t.integer "frequency"
+    t.date "administration_date"
+    t.string "comment"
+    t.bigint "pet_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_vaccines_on_pet_id"
+  end
+
+
   add_foreign_key "allergies", "pets"
   add_foreign_key "foods", "pets"
   add_foreign_key "medications", "pets"
   add_foreign_key "pets", "users"
   add_foreign_key "services", "pets"
   add_foreign_key "services", "professionals"
+  add_foreign_key "vaccines", "pets"
 end
