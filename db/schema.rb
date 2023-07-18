@@ -27,8 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_002117) do
     t.string "name"
     t.string "category"
     t.text "comment"
-    t.datetime "starts_at"
-    t.datetime "ends_at"
+    t.date "started_at"
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
