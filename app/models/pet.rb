@@ -5,4 +5,5 @@ class Pet < ApplicationRecord
   has_many :medications, dependent: :destroy
   has_many :vaccines, dependent: :destroy
   has_many :allergies, dependent: :destroy
+  has_many :diseases, dependent: :destroy
 end
