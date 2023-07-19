@@ -1,0 +1,20 @@
+<h1>My allergies</h1>
+
+<% Allergy.all.each do |a| %>
+  <h2><%= a.name %></h2>
+  <p><%= a.comment %></p>
+
+  <%= link_to "Edit this allergy", edit_allergy_path(a) %>
+  <br>
+
+  <%= link_to allergy_path(a), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this allergy?"} do %>
+  <i class="fa-solid fa-trash"></i>
+<% end %>
+
+<hr>
+
+<% end %>
+
+<%= link_to new_pet_allergy_path(@pet) do %>
+  <p>Add a new allergy</p>
+<% end %>

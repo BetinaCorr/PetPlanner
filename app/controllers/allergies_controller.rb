@@ -1,8 +1,9 @@
 class AllergiesController < ApplicationController
-  before_action :set_allergy, only: [:show, :edit, :update, :destroy]
-  before_action :set_pet, only: [:new, :create]
+  before_action :set_pet, only: %i[index new create]
+  before_action :set_allergy, only: %i[edit update destroy]
 
-  def show
+  def index
+    @allergies = @pet.allergies
   end
 
   def new
@@ -11,10 +12,13 @@ class AllergiesController < ApplicationController
 
   def create
     @allergy = Allergy.new(allergy_params)
+
+    # give the pet to the allergy
     @allergy.pet = @pet
 
+    # redirect to the allergies page if it saves
     if @allergy.save
-      redirect_to pet_allergy_path(@pet, @allergy)
+      redirect_to pet_allergies_path(@pet)
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,14 +29,13 @@ class AllergiesController < ApplicationController
 
   def update
     @allergy.update(allergy_params)
-    redirect_to pet_allergy_path(@allergy)
+    redirect_to pet_allergies_path(@allergy.pet)
   end
 
   def destroy
     @allergy.destroy
 
-    # arrumar o path que ta sendo redirecionado
-    redirect_to pet_path(@allergy.pet)
+    redirect_to pet_allergies_path(@allergy.pet)
   end
 
   private
