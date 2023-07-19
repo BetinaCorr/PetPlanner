@@ -1,0 +1,14 @@
+<h1>Here we can see the history of ALL foods</h1>
+<% @foods.each do |food| %>
+<h5><%= food.category %></h5>
+  <p><%= food.name %></p>
+  <%= link_to "Edit the food", edit_food_path(food) %>
+  <br>
+  <%= link_to "Delete this food", food_path(food), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this food?" } %>
+<br>
+  <hr>
+<% end %>
+
+<%= link_to "Add a new food",  new_pet_food_path(@pet) %>
+<br>
+<%= link_to "Go back to the Pet Show",  pet_path(@pet) %>
