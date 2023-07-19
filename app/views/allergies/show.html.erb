@@ -8,3 +8,13 @@
 <%= link_to new_pet_allergy_path(@allergy) do %>
   <i class="fa-solid fa-plus"></i>
 <% end %>
+<br>
+
+<%= link_to edit_allergy_path(@allergy) do %>
+  <i class="fa-solid fa-pen-to-square"></i>
+<% end %>
+<br>
+
+<%= link_to allergy_path(@allergy), data: { turbo_method: :delete, turbo_confirm: :"Are you sure?"} do %>
+  <i class="fa-solid fa-trash"></i>
+<% end %>

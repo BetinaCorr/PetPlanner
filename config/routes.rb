@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :allergies, only: [:show, :new, :create]
   end
 
+  resources :allergies, only: [:edit, :update, :destroy]
+
 end
