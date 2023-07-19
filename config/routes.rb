@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :pets, only: %i[index show new create edit update destroy] do
     resources :foods, only: %i[index new create]
-    resources :allergies, only: %i[show new create]
+    resources :allergies, only: %i[index new create]
   end
 
   resources :foods, only: %i[edit update destroy]
