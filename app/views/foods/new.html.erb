@@ -1,0 +1,10 @@
+<h1>Form to create new food</h1>
+
+<div>
+  <br>
+      <%= simple_form_for [@pet, @food] do |f| %>
+      <%= f.input :name, :label => 'Nome' %>
+      <%= f.input :category, :label => 'Ração ou Petisco' %>
+      <%= f.button :submit, "Add this food to your pet" %>
+    <% end %>
+</div>
