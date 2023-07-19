@@ -1,0 +1,11 @@
+<h1>Here is the form to edit the Pet</h1>
+
+<div>
+  <br>
+      <%= simple_form_for @pet do |f| %>
+      <%= f.input :name, :label => 'name' %>
+      <%= f.input :age, as: :integer %>
+      <%= f.input :species, :label => 'species' %>
+      <%= f.button :submit, "Add this pet" %>
+    <% end %>
+</div>
