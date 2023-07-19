@@ -7,3 +7,5 @@
 <%= link_to "Delete this pet", pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this pet?" } %>
 <br>
 <%= link_to "See all pets", pets_path %>
+<br>
+<%= link_to "See Foods", pet_foods_path(@pet) %>
