@@ -1,0 +1,9 @@
+<h1>My vets and petshopers here</h1>
+
+<% @professionals.each do |professional| %>
+  <p>Nome: <%= professional.name %></p>
+  <p>Endereço: <%= professional.address %></p>
+  <p>Telemóvel: <%= professional.phone_number %></p>
+  <hr>
+  
+<% end %>

@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   resources :pets, only: %i[index show new create edit update destroy] do
     resources :foods, only: %i[index new create]
     resources :allergies, only: %i[index new create]
+    resources :professionals, only: %i[index new create]
   end
 
   resources :foods, only: %i[edit update destroy]
   resources :allergies, only: %i[edit update destroy]
+  resources :professionals, only: %i[edit update destroy]
 
 end
