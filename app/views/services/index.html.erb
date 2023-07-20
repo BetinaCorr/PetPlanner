@@ -8,6 +8,7 @@
 <p>Horário: <%= service.starts_at.hour %>:<%= service.starts_at.min %></p>
 <p>Duração: <%= service.ends_at.hour - service.starts_at.hour  %> h</p>
 <%= link_to "Delete this Service", service_path(service), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this service?" } %>
+<%= link_to "Edit the Service", edit_service_path(service) %>
 
 <hr>
 <% end %>
