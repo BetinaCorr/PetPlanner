@@ -1,11 +1,40 @@
-<h1>Here is the form to edit the Pet</h1>
+<h1>Here I have all my pet infos</h1>
 
+<hr>
+<p>Nome: <%= @pet.name %></p>
+<p>Raça: <%= @pet.breed %></p>
+<p>Espécie: <%= @pet.species %></p>
+<p>Idade: <%= @pet.age %></p>
+<p>Gênero: <%= @pet.gender %></p>
+<p>Roupa: <%= @pet.clothes_size %></p>
+<p>Quantas caminhadas por dia: <%= @pet.walk %></p>
+<p>Foi adotado?: <%= @pet.adopted %></p>
+<p>Aniversário (nascimento ou adoção): <%= @pet.arrival_date %></p>
+<p>Peso: <%= @pet.weight %></p>
+<p>Foi castrado?: <%= @pet.sterilized %></p>
+<p>Owner: <%= @pet.user.email %></p>
+<hr>
+
+<h1>Here is the form to edit the Pet</h1>
+<%# TODO -> Colocar as infos com JS para editar o que quiser na mesma hora, sem usar o FORM %>
 <div>
   <br>
       <%= simple_form_for @pet do |f| %>
-      <%= f.input :name, :label => 'name' %>
-      <%= f.input :age, as: :integer %>
-      <%= f.input :species, :label => 'species' %>
-      <%= f.button :submit, "Add this pet" %>
+      <%= f.input :name, :label => 'Nome' %>
+      <%= f.input :age, as: :integer, :label => 'Idade'  %>
+      <%= f.input :species, collection: ['Cachorro', 'Gato', 'Outro'], :label => 'Espécie' %>
+      <%= f.input :breed, :label => 'Raça' %>
+      <%= f.input :gender, :label => 'Gênero' %>
+      <%= f.input :clothes_size, :label => 'Tamanho da Roupa' %>
+      <%= f.input :walk, as: :integer, :label => 'Quantas caminhadas por dia?' %>
+      <%= f.input :adopted, as: :boolean, :label => 'Adotado' %>
+      <%= f.input :arrival_date, as: :date, :label => 'Aniversário / Data que cheguei em casa' %>
+      <%= f.input :weight, as: :float, :label => 'Peso' %>
+      <%= f.input :sterilized, as: :boolean, :label => 'Castrado' %>
+
+      <%= f.button :submit, "Edit this pet" %>
+
     <% end %>
+
+      <%= link_to "Go back to the Pet Show",  pet_path(@pet) %>
 </div>
