@@ -1,0 +1,15 @@
+<h1>All Services here</h1>
+<% @services.each do |service| %>
+<h5><%= service.name_service %></h5>
+<p>Profissional: <%= service.professional.name %></p>
+<p>Valor: <%= service.price %> Euro </p>
+<%# TODO => Arrumar para aceitar durações de minutos ou horas e meia %>
+<p>Data: <%= service.starts_at.day %>/<%= service.starts_at.month %>/<%= service.starts_at.year %></p>
+<p>Horário: <%= service.starts_at.hour %>:<%= service.starts_at.min %></p>
+<p>Duração: <%= service.ends_at.hour - service.starts_at.hour  %> h</p>
+<%= link_to "Delete this Service", service_path(service), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this service?" } %>
+<%= link_to "Edit the Service", edit_service_path(service) %>
+
+<hr>
+<% end %>
+<br>

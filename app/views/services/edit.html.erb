@@ -1,0 +1,13 @@
+<h1>Here you can edit the service</h1>
+
+<div>
+  <br>
+      <%= simple_form_for [@professional, @service] do |f| %>
+      <%= f.input :name_service, collection: ['Consulta', 'Banho', 'Tosquia', 'Banho&Tosquia', 'Vacinação', 'Retorno', 'Outro'], :label => 'Tipo de serviço' %>
+      <%= f.input :price, :label => 'Preço' %>
+      <%= f.input :frequency, :label => 'Quantas vezes no mês?' %>
+       <%= f.input :starts_at, :label => 'Inicia às:' %>
+       <%= f.input :ends_at, :label => 'Termina às:' %>
+      <%= f.button :submit, "Add this serviço to your pet" %>
+    <% end %>
+</div>

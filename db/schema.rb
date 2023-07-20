@@ -92,11 +92,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_002117) do
     t.integer "frequency"
     t.datetime "starts_at"
     t.datetime "ends_at"
-    t.bigint "pet_id", null: false
     t.bigint "professional_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pet_id"], name: "index_services_on_pet_id"
     t.index ["professional_id"], name: "index_services_on_professional_id"
   end
 
@@ -131,7 +129,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_002117) do
   add_foreign_key "medications", "pets"
   add_foreign_key "pets", "users"
   add_foreign_key "professionals", "pets"
-  add_foreign_key "services", "pets"
   add_foreign_key "services", "professionals"
   add_foreign_key "vaccines", "pets"
 end
