@@ -2,10 +2,22 @@
 
 <div>
   <br>
-      <%= simple_form_for @pet do |f| %>
-      <%= f.input :name, :label => 'name' %>
-      <%= f.input :age, as: :integer %>
-      <%= f.input :species, :label => 'species' %>
+    <%= simple_form_for @pet do |f| %>
+      <%= f.input :name, :label => 'Nome' %>
+      <%= f.input :age, as: :integer, :label => 'Idade'  %>
+      <%= f.input :species, collection: ['Cachorro', 'Gato', 'Outro'], :label => 'Espécie' %>
+      <%= f.input :breed, :label => 'Raça' %>
+      <%= f.input :gender, :label => 'Gênero' %>
+      <%= f.input :clothes_size, :label => 'Tamanho da Roupa' %>
+      <%= f.input :walk, as: :integer, :label => 'Quantas caminhadas por dia?' %>
+      <%= f.input :adopted, as: :boolean, :label => 'Adotado' %>
+      <%= f.input :arrival_date, as: :date, :label => 'Aniversário / Data que cheguei em casa' %>
+      <%= f.input :weight, as: :float, :label => 'Peso' %>
+      <%= f.input :sterilized, as: :boolean, :label => 'Castrado' %>
+
       <%= f.button :submit, "Add this pet" %>
+
     <% end %>
+
+  
 </div>
