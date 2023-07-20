@@ -3,6 +3,7 @@
 <% @diseases.each do |disease| %>
   <h3><%= disease.name %></h3>
   <p><%= disease.category %></p>
+  <p>Começou em: <%= disease.started_at %></p>
   <p><%= disease.comment %></p>
 
   <%= link_to "Editar doença", edit_disease_path(disease) %>
