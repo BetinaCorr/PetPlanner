@@ -53,7 +53,7 @@ royal_petisco2 = Food.new(name: 'Royal Canin', category: 'petisco', pet: mojito)
 royal_petisco2.save!
 
 puts 'Creating Professional...'
-vet = Professional.new(name: 'Rafael', address: 'Rua dos Bobos, 0', phone_number: '999888666')
+vet = Professional.new(name: 'Rafael', address: 'Rua dos Bobos, 0', phone_number: '999888666', pet: smeagol)
 vet.save!
 
 puts 'Creating Services for Smeagol, Tequila and Mojito...'

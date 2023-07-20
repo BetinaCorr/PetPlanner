@@ -1,0 +1,15 @@
+<h1>My vets and petshopers here</h1>
+
+<% @professionals.each do |professional| %>
+  <p>Nome: <%= professional.name %></p>
+  <p>Endereço: <%= professional.address %></p>
+  <p>Telemóvel: <%= professional.phone_number %></p>
+  <%= link_to "Edit the professioanl", edit_professional_path(professional) %>
+  <%= link_to "Delete this professional", professional_path(professional), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this professional?" } %>
+<br>
+  <hr>
+<% end %>
+
+<%= link_to "Add a new professional", new_pet_professional_path(@pet) %>
+<br>
+<%= link_to "Go back to the Pet Show",  pet_path(@pet) %>
