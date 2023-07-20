@@ -40,7 +40,7 @@ class DiseasesController < ApplicationController
   private
 
   def disease_params
-    params.require(:disease).permit(:name, :comment, :category)
+    params.require(:disease).permit(:name, :comment, :category, :started_at)
   end
 
   def set_disease
