@@ -1,0 +1,12 @@
+<h1>Formulário para adicionar uma nova vacina</h1>
+
+<%= simple_form_for [@pet, @vaccine] do |f| %>
+  <%= f.input :name, :label => 'Nome' %>
+  <%= f.input :purpose_vaccine, :label => 'Finalidade da Vacina' %>
+  <%= f.input :administration_date, :label => 'Data de Administração' %>
+  <%= f.input :frequency, :label => 'Frequência' %>
+  <%= f.input :comment, :label => 'Comentário' %>
+  <%= f.button :submit, 'Adiciona essa vacina' %>
+<% end %>
+
+<%= link_to "Voltar para todas as vacinas", pet_vaccines_path(@pet) %>

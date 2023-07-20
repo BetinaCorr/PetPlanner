@@ -1,9 +1,9 @@
 class MedicationsController < ApplicationController
-  before_action :set_pet, only: %i[index new create]
+  before_action :set_pets, only: %i[index new create]
   before_action :set_medication, only: %i[edit update destroy]
 
   def index
-    @medications = Medication.all
+    @medications = @pet.medications
   end
 
   def new
@@ -47,7 +47,7 @@ class MedicationsController < ApplicationController
     @medication = Medication.find(params[:id])
   end
 
-  def set_pet
+  def set_pets
     @pet = Pet.find(params[:pet_id])
   end
 

@@ -8,7 +8,7 @@
   <p>Data de validade: <%= medication.expiration_date %></p>
   <p>Comentário: <%= medication.comment %></p>
 
-  <%= link_to "Editar essa medicação", edit_medication_path(@pet, medication) %>
+  <%= link_to "Editar essa medicação", edit_medication_path(medication) %>
   <br>
   <%= link_to medication_path(medication), data: { turbo_method: :delete, turbo_confirm: "Tem certeza que deseja deletar essa medicação?"} do %>
     <i class="fa-solid fa-trash"></i>
