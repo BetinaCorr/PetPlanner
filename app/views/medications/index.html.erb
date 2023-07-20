@@ -1,0 +1,23 @@
+<h1>Todas as minhas medicações</h1>
+
+<% @medications.each do |medication| %>
+  <h3><%= medication.name %></h3>
+  <p>Finalidade: <%= medication.purpose_medication %></p>
+  <p>Data de administração: <%= medication.administration_date %></p>
+  <p>Com que frequência tomar: <%= medication.frequency %></p>
+  <p>Data de validade: <%= medication.expiration_date %></p>
+  <p>Comentário: <%= medication.comment %></p>
+
+  <%= link_to "Editar essa medicação", edit_medication_path(@pet, medication) %>
+  <br>
+  <%= link_to medication_path(medication), data: { turbo_method: :delete, turbo_confirm: "Tem certeza que deseja deletar essa medicação?"} do %>
+    <i class="fa-solid fa-trash"></i>
+  <% end %>
+
+  <hr>
+<% end %>
+
+<%= link_to 'Adicione uma nova medicação', new_pet_medication_path %>
+<br>
+
+<%= link_to "Voltar para a o Show do Pet", pet_path(@pet) %>
