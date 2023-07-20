@@ -1,0 +1,22 @@
+<h1>Veja todas as vacinas</h1>
+
+<% @vaccines.each do |vaccine| %>
+  <h3><%= vaccine.name %></h3>
+  <p>Finalidade: <%= vaccine.purpose_vaccine %></p>
+  <p>Data de administração: <%= vaccine.administration_date %></p>
+  <p>Com que frequência tomar (anos): <%= vaccine.frequency %></p>
+  <p>Comentário: <%= vaccine.comment %></p>
+
+  <%= link_to "Editar essa vacina", edit_vaccine_path(vaccine) %>
+  <br>
+  <%= link_to vaccine_path(vaccine), data: { turbo_method: :delete, turbo_confirm: "Tem certeza que deseja deletar essa vacina?"} do %>
+    <i class="fa-solid fa-trash"></i>
+  <% end %>
+
+  <hr>
+<% end %>
+
+<%= link_to 'Adicione uma nova vacina', new_pet_vaccine_path %>
+<br>
+
+<%= link_to "Voltar para a o Show do Pet", pet_path(@pet) %>

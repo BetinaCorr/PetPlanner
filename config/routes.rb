@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :professionals, only: %i[index new create]
     resources :diseases, only: %i[index new create]
     resources :medications, only: %i[index new create]
+    resources :vaccines, only: %i[index new create]
     resources :services, only: %i[index]
   end
 
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   resources :services, only: %i[edit update destroy]
   resources :diseases, only: %i[edit update destroy]
   resources :medications, only: %i[edit update destroy]
+  resources :vaccines, only: %i[edit update destroy]
   resources :professional, only: %i[edit update destroy] do
     resources :services, only: %i[new create]
   end

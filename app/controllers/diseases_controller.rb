@@ -3,7 +3,7 @@ class DiseasesController < ApplicationController
   before_action :set_disease, only: %i[edit update destroy]
 
   def index
-    @diseases = Disease.all
+    @diseases = @pet.diseases
   end
 
   def new

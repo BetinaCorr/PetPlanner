@@ -1,13 +1,13 @@
 <h1>My allergies</h1>
 
-<% Allergy.all.each do |a| %>
-  <h2><%= a.name %></h2>
-  <p><%= a.comment %></p>
+<% @allergies.each do |allergy| %>
+  <h2><%= allergy.name %></h2>
+  <p><%= allergy.comment %></p>
 
-  <%= link_to "Edit this allergy", edit_allergy_path(a) %>
+  <%= link_to "Edite essa alergia", edit_allergy_path(allergy) %>
   <br>
 
-  <%= link_to allergy_path(a), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this allergy?"} do %>
+  <%= link_to allergy_path(allergy), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this allergy?"} do %>
     <i class="fa-solid fa-trash"></i>
   <% end %>
 
@@ -15,6 +15,7 @@
 
 <% end %>
 
-<%= link_to "Add a new allergy" new_pet_allergy_path(@pet) %>
+<%= link_to "Adiciona uma alergia", new_pet_allergy_path(@pet) %>
+<br>
 
 <%= link_to "Go back to the Pet Show", pet_path(@pet) %>
