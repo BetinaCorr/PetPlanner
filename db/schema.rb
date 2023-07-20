@@ -80,8 +80,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_002117) do
     t.string "name"
     t.string "address"
     t.string "phone_number"
+    t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_professionals_on_pet_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -128,6 +130,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_002117) do
   add_foreign_key "foods", "pets"
   add_foreign_key "medications", "pets"
   add_foreign_key "pets", "users"
+  add_foreign_key "professionals", "pets"
   add_foreign_key "services", "pets"
   add_foreign_key "services", "professionals"
   add_foreign_key "vaccines", "pets"

@@ -4,6 +4,7 @@ class CreateProfessionals < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :address
       t.string :phone_number
+      t.references :pet, null: false, foreign_key: true
 
       t.timestamps
     end
