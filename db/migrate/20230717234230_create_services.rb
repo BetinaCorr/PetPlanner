@@ -6,7 +6,6 @@ class CreateServices < ActiveRecord::Migration[7.0]
       t.integer :frequency
       t.datetime :starts_at
       t.datetime :ends_at
-      t.references :pet, null: false, foreign_key: true
       t.references :professional, null: false, foreign_key: true
 
       t.timestamps

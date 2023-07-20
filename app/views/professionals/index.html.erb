@@ -4,6 +4,9 @@
   <p>Nome: <%= professional.name %></p>
   <p>Endereço: <%= professional.address %></p>
   <p>Telemóvel: <%= professional.phone_number %></p>
+  <br>
+  <%= link_to "Add an appointment", new_professional_service_path(professional) %>
+  <br>
   <%= link_to "Edit the professioanl", edit_professional_path(professional) %>
   <%= link_to "Delete this professional", professional_path(professional), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this professional?" } %>
 <br>

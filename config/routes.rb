@@ -10,10 +10,14 @@ Rails.application.routes.draw do
     resources :foods, only: %i[index new create]
     resources :allergies, only: %i[index new create]
     resources :professionals, only: %i[index new create]
+    resources :services, only: %i[index]
   end
 
   resources :foods, only: %i[edit update destroy]
   resources :allergies, only: %i[edit update destroy]
-  resources :professionals, only: %i[edit update destroy]
+  resources :services, only: %i[edit update destroy]
+  resources :professional, only: %i[edit update destroy] do
+    resources :services, only: %i[new create]
+  end
 
 end

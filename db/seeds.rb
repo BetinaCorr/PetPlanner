@@ -57,14 +57,8 @@ vet = Professional.new(name: 'Rafael', address: 'Rua dos Bobos, 0', phone_number
 vet.save!
 
 puts 'Creating Services for Smeagol, Tequila and Mojito...'
-smeagol_service = Service.new(name_service: 'Consulta', starts_at: '2023-10-10 10:00:00', ends_at: '2023-10-10 11:00:00', price:'30', pet: smeagol, professional: vet)
+smeagol_service = Service.new(name_service: 'Consulta', starts_at: '2023-10-10 10:00:00', ends_at: '2023-10-10 11:00:00', price:'30', professional: vet)
 smeagol_service.save!
-
-tequila_service = Service.new(name_service: 'Consulta', starts_at: '2023-10-10 10:00:00', ends_at: '2023-10-10 11:00:00', price:'30', pet: tequila, professional: vet)
-tequila_service.save!
-
-mojito_service = Service.new(name_service: 'Consulta', starts_at: '2023-10-10 10:00:00', ends_at: '2023-10-10 11:00:00', price:'30', pet: mojito, professional: vet)
-mojito_service.save!
 
 puts 'Creating Vaccines for Smeagol, Tequila and Mojito...'
 smeagol_raiva = Vaccine.new(name: 'Raiva', administration_date: '2021-10-10', pet: smeagol)
