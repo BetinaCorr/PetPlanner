@@ -1,0 +1,8 @@
+<h1>Formulário para criar uma doença</h1>
+
+<%= simple_form_for [@pet, @disease] do |f| %>
+  <%= f.input :name, :label => 'Nome' %>
+  <%= f.input :category, collection: ['Crônica', 'Aguda', 'Outro'], :label => 'Crônica ou Aguda' %>
+  <%= f.input :comment, :label => 'Comentário' %>
+  <%= f.button :submit, "Add this disease to your pet" %>
+<% end %>

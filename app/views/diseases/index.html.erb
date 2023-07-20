@@ -1,0 +1,20 @@
+<h1>Aqui tem o histórico de todas as Doenças</h1>
+
+<% @diseases.each do |disease| %>
+  <h3><%= disease.name %></h3>
+  <p><%= disease.category %></p>
+  <p><%= disease.comment %></p>
+
+  <%= link_to "Editar doença", edit_disease_path(disease) %>
+  <br>
+
+  <%= link_to disease_path(disease), data: { turbo_method: :delete, turbo_confirm: "Tem certeza que deseja deletar essa doença?"} do %>
+    <i class="fa-solid fa-trash"></i>
+  <% end %>
+  <hr>
+<% end %>
+
+<%= link_to "Add a new disease", new_pet_disease_path(@pet)  %>
+<br>
+
+<%= link_to "Voltar para a o Show do Pet", pet_path(@pet) %>
