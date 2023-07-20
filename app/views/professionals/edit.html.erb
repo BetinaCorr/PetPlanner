@@ -1,0 +1,11 @@
+<h1>Edit the professional here</h1>
+
+<div>
+  <br>
+      <%= simple_form_for [@pet, @professional] do |f| %>
+      <%= f.input :name, :label => 'Nome' %>
+      <%= f.input :address, :label => 'Endereço' %>
+       <%= f.input :phone_number, :label => 'Telemóvel' %>
+      <%= f.button :submit, "Edit this professional" %>
+    <% end %>
+</div>
